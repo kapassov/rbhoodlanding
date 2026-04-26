@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0b0f0e;
+  --panel: #111715;
+  --panel-strong: #151a18;
+  --text: #f5f7f6;
+  --muted: #9ba8a3;
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #00d084;
+  --primary-dark: #00b875;
+  --font-sans: "Suisse Intl", "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(0, 208, 132, 0.14), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(0, 208, 132, 0.08), transparent 24%),
+    linear-gradient(180deg, #0b0f0e 0%, #111715 48%, #0b0f0e 100%);
+  color: var(--text);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(0, 208, 132, 0.3);
+  color: #f5f7f6;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+    box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-text sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-sm leading-7 text-muted sm:text-base;
+  }
+
+  .pill-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.24em] text-muted;
+  }
+}
